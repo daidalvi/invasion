@@ -1,0 +1,476 @@
+/* Met Office external website                                                                            
+
+Colours:
+- black/dark grey: #202A2C
+- dark grey: #666666      
+- grey: #DDDDDD (thin lines)
+- light grey: #EEEEEE (background colour)
+- darkish green: #BCDB0C                 
+- green: #CCFF33                         
+- darkish blue: #4BA8BA                  
+- blue: #00ADD0                          
+
+*/
+
+/*******************************************************************************
+ * GENERAL
+ ******************************************************************************/
+/*<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700' rel='stylesheet' type='text/css'>*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,700);
+
+body {
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif !important;
+    /*white-space: pre-wrap;*/
+    color:white;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+body.body-index{
+    background:#000 url(../imgs/bg.jpeg) no-repeat fixed top center;
+    background-size: cover;
+
+}
+
+div.two-panels {
+    height: inherit;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+div.tree-panel {
+    flex: 19vw;
+    padding-left: 1vw;
+    height: 100%;
+    overflow: auto;
+    border-right: 3px solid;
+    
+    /*background-color: #EEEEEE;
+    border-top: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    margin-bottom: 20px;*/
+    /*margin: 0.75em 0 0.75em 20px;*/
+    background-color: rgba(0,0,0,0.8);
+}
+
+div.page-panel {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+div.page-panel iframe {
+    width: 79vw;
+    border: 0px;
+    margin-top: 0px;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+div.page {
+    padding: 40px; 
+    background-color: rgba(0,0,0,0.85);    
+    margin:40px;
+    position: relative;
+    z-index: 10;
+    line-height: 30px;
+
+}
+
+.clear {
+    clear: both
+}
+
+/*******************************************************************************
+ * TREE INDEX
+ ******************************************************************************/
+
+div.tree {
+    font-size: 14px;
+    color: #1aff68;
+}
+
+/* fix for firefox */
+div.tree button{
+background-color: rgba(24,255,139,.1);
+border-radius: 2px;
+color: #18ff8b;
+cursor: pointer;
+display: inline-block;
+font: 500 10.5px Ubuntu, sans-serif;
+    line-height: normal;
+line-height: 1.5;
+margin: 4px 4px 4px 0;
+padding: 4px 8px;
+text-transform: uppercase;
+vertical-align: middle;
+border:none;
+
+}
+#show-panel {
+    background-color: rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+    padding:10px 15px;
+}
+#show-panel>div{
+    background-image: url("../imgs/pngegg.png");
+    width:30px;
+    height: 30px;
+    background-size: 100% 100%;
+}
+div.tree a, div.tree a:visited {
+    color: #ddd;
+    text-decoration: none;
+}
+
+div.tree a:hover {
+    text-decoration: underline;
+}
+
+div.tree ul {
+    padding-inline-start: 20px;
+    list-style-type: none;
+    line-height: 0.3;
+}
+
+div.tree ul.outermost {
+    padding-inline-start: 0;
+}
+
+div.tree li {
+    padding-inline-start: 0;
+}
+div.tree li.leaf {
+    padding-inline-start: 10px;
+    line-height: 2;
+}
+
+div.tree a.show, div.tree a.hide { display: none; }
+
+.hide {
+    display: none;
+}
+
+/*******************************************************************************
+ * NODE PAGES
+ ******************************************************************************/
+
+/* TABLES */
+
+table {
+    border: 1px solid #AAAAAA;
+}
+
+th {
+    background-color: #EEEEEE;
+}
+
+td {
+    padding-left: 5px;
+    padding-right: 5px;
+    border-top: 1px solid #AAAAAA;
+}
+
+/* HEADINGS */
+
+div.page h1 {
+    font-weight: bold;
+}
+
+div.page h1.title {
+    text-decoration: none;
+    color:#18ff8b;
+}
+
+div.page h2 {
+    padding-top: 1em;
+    /*padding-bottom: 0.5em;*/
+    font-weight: bold;
+    font-size: 150%;
+    color: #cccccc;
+    display: inline;
+}
+
+div.page h3 {
+    padding-top: 0.75em;
+    font-weight: bold;
+    font-size: 125%;
+    color: #cccccc;
+    display: inline;
+}
+
+/* LINKS */
+
+/*div.page a, div.page a:visited {
+    color: #005BCA;
+    text-decoration: none;
+}
+
+div.page a:hover, div#me a:hover {
+    text-decoration: underline;
+}*/
+
+/* CODE */
+
+span.code-node {
+    /*color: #FFFF00;  /* yellow */
+}
+
+div.codebox, div.page code, div.page pre {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: normal;
+    font-size: 13px;
+    background-color: #EEEEEE;
+    border: 1px solid #DDDDDD;
+}
+
+div.page p.tagged-text,
+div.page code {
+    /*color: #859C00;*/
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+
+div.page pre {
+    padding: 0.25em;
+    overflow: auto !important;
+    width: 75%;
+}
+
+
+/* IMAGES */
+
+/*img {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}*/
+
+.mobile{
+    display: none;
+}
+#show-panel{display: none;}
+
+.rasskazi-pdf li a{
+    color:#bbb;
+    text-decoration: none;
+}
+.rasskazi-pdf li a:hover{
+    color:white;
+    text-decoration: none;
+}
+
+div.tree-panel h2 a, div.tree-panel h2 a:visited{
+    color:#18ff8b;
+}
+
+div.page img{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    body {
+        font-size: 18px;
+    }
+    .mobile{
+        display: inline;
+    }
+    div.tree-panel{
+        min-width: 250px;
+        position: absolute;
+        display: none;
+    }
+    div.page-panel, div.page-panel iframe{
+        width:100%;
+    }
+    #show-panel{
+        display: inline;
+        position: absolute;
+        right: 15px;
+    }
+    .mobile-show #show-panel{
+        display: none;
+    }
+    .mobile-show div.tree-panel{
+        display: block;
+    }
+
+    img{
+        width: 100%;
+    }
+
+    div.tree {
+     font-size: 16px;
+    }
+    div.page {
+        padding: 20px; 
+        margin:20px;
+    }
+
+    div.tree-panel{
+        background-color: black;
+    }
+    div.page h1.title{
+        font-size: 28px;
+    }
+
+}
+
+
+.bg-photo-container, .bg-photo-container .bg-photo {
+    height: 464px;
+    width: 100%;
+}
+
+.bg-photo-container {
+    overflow: hidden;
+    position: absolute;
+    top:0px;
+}
+
+.bg-photo {
+    background-attachment: scroll;
+
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+
+    -webkit-filter: none !important;
+    filter: none !important;
+    opacity: 0.6 !important;
+}
+
+
+
+.index-page{
+    padding:10px;
+}
+.lucid_post {
+    margin: 10px;
+
+    border-radius: 0px;
+    float: left;
+    overflow: hidden;
+    -webkit-transition: .3s box-shadow cubic-bezier(.4,0,.2,1);
+    transition: .3s box-shadow cubic-bezier(.4,0,.2,1);
+    width: 31%;
+    height:515px;
+
+    background-color: rgba(0,0,0,0.8);
+    position: relative;
+}
+@media (max-width: 1000px) {
+    .lucid_post {
+        width: 45%;
+    }
+}
+@media (max-width: 600px) {
+    .lucid_post {
+        width: 92%;
+    }
+}
+
+.lucid_content{
+    padding:10px 20px;
+    overflow:hidden;
+    height: 255px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.snippet-thumbnail {
+    display: block;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    -webkit-transition: .3s opacity cubic-bezier(.4,0,.2,1);
+    transition: .3s opacity cubic-bezier(.4,0,.2,1);
+}
+.snippet-thumbnail, .snippet-thumbnail-container {
+    height: 184px;
+    overflow-y: hidden;
+}
+.lucid_title{
+
+    font: 500 16px Ubuntu, sans-serif;
+    padding:10px 20px 10px 20px;
+    border-bottom:1px dotted #18ff8b;
+    white-space: nowrap;
+
+}
+.lucid_post a{
+    color:#fff;
+    text-decoration: none;
+}
+
+
+h1.mainframe-title {
+    border-bottom: 2px solid #ff7600;
+    padding-bottom: 10px !important;
+    margin:20px 10px;
+}
+.lucid_content img{
+    display: none;
+}
+
+.invasion-slug{
+    color: #ffffff;
+    font: italic 300 14px Merriweather, Georgia, serif;
+    line-height: normal;
+    line-height: 1.7;
+    margin: 16px 0;
+    padding: 0 20px;
+}
+
+.copyright{
+    text-align: center;
+    font-size:13px;
+    color:#18ff8b;
+}
+
+
+.gohome{
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+    border-right:15px solid #ff7600; 
+    z-index: 1000;
+    position: relative;
+    float: left;
+    display: block;
+    margin-right: 10px;
+    margin-top: 24px;
+
+}
+.gohome.fixed{
+    position: fixed;
+    top: 0px;
+    background: black;
+    margin: 15px 0 0 0;
+    left: 20px;
+}
+h1.title.fixed{
+    position: fixed;
+    top: 0px;
+    background: black;
+    left: 0px;
+    margin: 0px;
+    padding: 10px 10px 10px 50px;
+    font-size:22px;
+    width: 100%;
+    border-bottom: 2px solid #ff7600;
+}

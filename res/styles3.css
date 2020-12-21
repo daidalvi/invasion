@@ -99,20 +99,23 @@ div.tree {
 
 /* fix for firefox */
 div.tree button{
-background-color: rgba(24,255,139,.1);
-border-radius: 2px;
-color: #18ff8b;
-cursor: pointer;
-display: inline-block;
-font: 500 10.5px Ubuntu, sans-serif;
+    background-color: rgba(24,255,139,.1);
+    border-radius: 2px;
+    color: #18ff8b;
+    cursor: pointer;
+    display: inline-block;
+    font: 500 10.5px Ubuntu, sans-serif;
     line-height: normal;
-line-height: 1.5;
-margin: 4px 4px 4px 0;
-padding: 4px 8px;
-text-transform: uppercase;
-vertical-align: middle;
-border:none;
-
+    line-height: 1.5;
+    margin: 4px 4px 4px 0;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    border:none;
+    cursor: pointer;
+}
+div.tree button:hover{
+    background-color: rgba(24,255,139,.3);
 }
 #show-panel {
     background-color: rgba(0, 0, 0, 0.8);
